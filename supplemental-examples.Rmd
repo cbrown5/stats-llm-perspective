@@ -9,11 +9,13 @@ bibliography: references.bib
 output: word_document
 ---
 
-CJ Brown - c.j.brown@utas.edu.au
-University of Tasmania
+Christopher J. Brown^[1,2] &  Scott Spillias^[2,3]
 
-Scott Spillias
-CSIRO Environment 
+1. Institute for Marine and Antarctic Studies, University of Tasmania, Hobart, Tasmania
+
+2. Centre for Marine Socio-Ecology, University of Tasmania, Hobart, Australia
+
+3. CSIRO Environment, Hobart, Australia
 
 ## Benthic Multivariate analysis 
 
@@ -79,39 +81,124 @@ As you go tick of the steps below.
 
 As you go, document the methodology. Be sure to output both figures (as png files) and numbers that can be used in the final report.
 
-## Data 
-The datasets are available from the web at the URLs below
 
+## Meta data 
 
-### BenthicCoverSurveys
+The datasets are available at the URLs below
 
-![Benthic cover survey data in long format](https://raw.githubusercontent.com/cbrown5/BenthicLatent/refs/heads/master/data-raw/BenthicCoverSurveys.csv")
+### benthic_cover.csv
+
+[Benthic cover survey data in long format](https://raw.githubusercontent.com/cbrown5/example-ecological-data/refs/heads/main/data/benthic-reefs-and-fish/benthic_cover.csv)
+
 
 Variables
 - site: Unique site IDs
 - trans: transect numbers, there are multiple transects per site
 - code: benthic organism code
-- cover: Number of 
-- n.pts: number of points sampled 
+- cover: Number of points belonging to this habitat type
+- n.pts: Total number of points sampled on the transect, used to normalize `Cover` to get per cent cover. 
 
-## Benthic_Variables
+## benthic_variables.csv
 
-![Database linking benthic codes to full names](https://raw.githubusercontent.com/cbrown5/BenthicLatent/refs/heads/master/data-raw/Benthic_Variables.csv)
-
-Variables
-- CODE: benthic organism code, matches `code` in BenthicCoverSurveys
-- CATEGORY: Long format name of benthic organism
-
-## JuvUVCSites_with_ReefTypes_16Jun2016
-
-![Site level covariates](https://raw.githubusercontent.com/cbrown5/BenthicLatent/refs/heads/master/data-raw/JuvUVCSites_with_ReefTypes_16Jun2016.csv)
+[Database linking benthic codes to full names](https://raw.githubusercontent.com/cbrown5/example-ecological-data/refs/heads/main/data/benthic-reefs-and-fish/benthic_variables.csv)
 
 Variables
-- site: Unique site IDs
-- reeftype: Type of reef (e.g. intra-lagoon or lagoon)
-- secchi: Secchi depth (m) a measure of water turbidity
+- code: benthic organism code, matches `Code` in benthic_cover
+- category: Long format name of benthic organism
+
+## fish-coral-cover-sites.csv
+
+![Site level covariates](https://raw.githubusercontent.com/cbrown5/example-ecological-data/refs/heads/main/data/benthic-reefs-and-fish/fish-coral-cover-sites.csv)
+
+Variables
+- site: Unique site IDs, use to join to benthic_cover.csv
+- reef.ID: Unique reef ID
+- pres.topa: number of Topa counted (local name for Bolbometopon)
+- pres.habili: number of Habili counted (local name for Cheilinus) 
+- secchi: Horizontal secchi depth (m), higher values mean the water is less turbid
 - flow: Factor indicating if tidal flow was "Strong" or "Mild" at the site
-- mindist: Distance to the nearest logging operation (m)
+- logged: Factor indicating if the site was in a region with logging "Logged" or without logging "Not logged"
+- coordx: X coordinate in UTM zone 57S
+- coordy: Y coordinate in UTM zone 57S
+- cb_cover: Number of PIT points for branching coral cover
+- soft_cover: Number of PIT points for soft coral cover
+- n_pts: Number of PIT points at this site (for normalizing cover to get per cent cover)
+- dist_to_logging_km: Linear distance to nearest log pond (site where logging occurs) in kilometres. 
+```
+
+## Analysis of interacting pressures from experimental data 
+
+Below we provide a second example of a readme.md file, this time for experimentally collected data from [@king2022interactions].
+
+```
+# Analysing of effects of interacting stressors on algal growth 
+
+## Introduction
+
+We'll analyse an experimental dataset to understand interactions among multiple stressors and how they affect algal density over time. 
+
+## Aims
+
+1. Quantify the interactive effects of light and diuron on algal growth.  
+
+## Data methodology
+
+This datasets is from an experiment where algal grown in replicate containers were exposed to multiple stressors of varying light and diuron (herbicide exposure). The number of algal cells and a measure of photosynthetic capacity were measured at several time intervals. The dataset thus contains replicate measurements over time (longitudinal data)
+ as well as the potential to look at effects of interacting pressures on two response variables. 
+
+There are 4 blocks, one with missing data for algal cell density. In each block there is a crossed design between multiple light (3 levels) and diuron levels (5 levels). Measurements of cell density are repeated at intervals over 72 hours. 
+
+This data were published in this study: 
+[King OC, van de Merwe JP, Campbell MD, Smith RA, Warne MSJ, Brown CJ. 2022 Interactions among multiple stressors vary with exposure duration and biological response. Proc. R. Soc. B 289: 20220348. https://doi.org/10.1098/rspb.2022.0348](https://doi.org/10.1098/rspb.2022.0348)
+
+## Analysis methodology 
+
+Build a GAM of log(cell density) over time (hours). Use this GAM formula:
+
+`ln_cell_density ~ s(block, bs = "re") + s(hours, by = diuron) + s(hours, by = light) + s(diuron, light)` 
+
+Use a Gaussian family and include an offset for initial log cell density. 
+
+We will do a thorough verification of all GAM assumptions. 
+
+## Tech context
+- We will use the R program
+- tidyverse packages for data manipulation
+- mgcv package for statistical analysis
+- ggplot2 for data visualization
+
+Keep your scripts short and modular to facilitate debugging. Don't complete all of the steps below in one script. Finish scripts where it makes sense and save intermediate datasets. 
+
+## Steps
+As you go tick of the steps below. 
+
+[ ]  Import the datasets
+[ ] Wrangle data to make sure all categorical variables are factors and we have all neccessary variables
+[ ] Fit the GAM
+[ ] Do GAM verification of residuals and concurvity
+[ ] Plot effects with CIs using visreg
+[ ] Write an Rmd report summarizing the findings
+
+As you go, document the methodology. Be sure to output both figures (as png files) and numbers that can be used in the final report.
+
+## Meta data 
+
+### diuron_data.csv  
+
+[Contains all experimental raw data (i.e. four replicates) for the responses of diuron and light exposure on algal growth and photosynthetic activity. Block 1 is missing cell density data.](https://raw.githubusercontent.com/cbrown5/example-ecological-data/refs/heads/main/data/algal-stressors/diuron_data.csv) 
+
+
+Variables:
+- hours: Measurement time in hours (0.33, 2, 24, 48, 72)
+- Light_num: Light level in micromoles of photons per square meter per second (5, 20, 80)
+- Diuron_num: Amount of Diuron (herbicide) in ug per liter (0, 0.11, 0.33, 1, 3)
+- block: Experimental block (1-4), representing independent algae cultures
+- sample_id_celld: Unique identifier for cell density samples, combining treatment and block
+- t0_celld: Initial cell density at time zero
+- celld: Cell density at the specified measurement time
+- sample_id_Yield: Unique identifier for photosynthetic yield samples
+- t0_Yield: Initial photosynthetic yield (Y(II)) at time zero
+- Yield: Photosynthetic yield, calculated as (Fm - F)/Fm, at the specified measurement time
 
 ```
 
