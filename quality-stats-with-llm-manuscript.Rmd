@@ -185,7 +185,7 @@ It is helpful to separate statistical workflows into distinct components that al
 3. **Write code**: Writing the actual code to implement analyses
 4. **Guidance on Interpretation**: Understanding and reporting results
 
-We deal with steps 1-3 here. The credibility of statistical interpretation urgently needs further empirical evaluation, so we leave that for future studies.  
+We deal with steps 1-3 here (Figure 2). The credibility of statistical interpretation urgently needs further empirical evaluation, so we leave that for future studies.  
 
 LLMs perform differently across these components. They excel at code generation and implementation planning but are less reliable for selecting appropriate statistical approaches or interpreting complex results. 
 
@@ -194,6 +194,12 @@ LLMs can be used across all of these steps, but we recommend that each step is t
 The separation of workflow steps also helps prevent overreliance on LLMs for statistical decisions. 
 
 Below we will work through three examples that align to each of the steps above. 
+
+![](figure2.png)
+
+**Figure 2**
+Recommended workflow for using LLMs in statistical analysis, showing the four key steps alongside specific recommendations for effectively leveraging LLMs at each stage while maintaining scientific rigor.
+
 
 ### Example Step 1. Statistical approach selection
 
@@ -332,37 +338,26 @@ Large language models represent both opportunity and challenge for statistical p
 
 The prompting guidelines presented in this perspective provide a framework for leveraging LLMs while maintaining statistical rigor. By separating workflows into components that align with LLM strengths and limitations, providing appropriate context and constraints, and maintaining human oversight of critical decisions, researchers can harness these tools while mitigating their risks. Our recommendations are common sense and align closely with best-practices for ecological statistics and open data in general [@jenkins2023reproducibility; @popovic2024four] - what is better for human reproducibility is also good for LLMs efficiency. 
 
-Several principles emerge from our perspective:
+Several principles emerge from our perspective that can guide effective LLM use in ecological statistics. First and foremost, researchers must maintain critical thinking when using these tools. LLMs should complement rather than replace research expertise [@messeri2024artificial]. Statistical suggestions from LLMs require careful evaluation against domain knowledge and established statistical principles. This critical evaluation becomes particularly important when analyzing ecological data with complex dependencies that may not be adequately captured in standard statistical approaches.
 
-1. **Maintain critical thinking**: LLMs should complement rather than replace research expertise [@messeri2024artificial]. Researchers must critically evaluate LLM suggestions against domain knowledge and statistical principles.
+Providing rich context dramatically improves LLM performance for statistical tasks. Our experience suggests that most researchers are under-utilizing the potential for detailed prompts [@boonstra2024prompt]. Modern LLMs have context windows that allow hundreds of thousands of tokens—equivalent to several theses worth of text. This capacity enables researchers to include comprehensive information about research questions, data characteristics, and analytical constraints. Studies have consistently shown that LLM statistical guidance improves when provided with this detailed contextual information [@zhu2024large; @jansen2025leveraging]. Researchers should leverage this capability by developing more comprehensive prompts that include relevant background information, data summaries, and specific analytical requirements.
 
-2. **Provide rich context**: All of the above advice suggests using longer and more detailed prompts than we typically see our colleagues using [@boonstra2024prompt]. LLM's have context windows that allow 100,000s of tokens equivalent to several theses worth of work. Our experience is that most researchers are under-using this potential for detailed prompts. The quality of LLM statistical guidance improves dramatically when provided with detailed information about research questions, data characteristics, and analytical constraints [@zhu2024large; @jansen2025leveraging]. 
-
-3. **Document LLM use**: Transparency about LLM use in research workflows is essential for reproducibility and evaluation. Publications should clearly describe that LLMs were used.
-
-4. **Develop LLM literacy**: As these tools become increasingly integrated into research workflows, developing "LLM literacy"—understanding how these models work, their limitations, and effective interaction strategies—becomes an essential skill for environmental scientists [@messeri2024artificial].
+As LLMs become increasingly integrated into research practices, developing "LLM literacy" becomes an essential skill for environmental scientists. This literacy encompasses understanding how these models work, recognizing their limitations, and mastering effective interaction strategies [@messeri2024artificial]. Researchers need to develop the ability to craft effective prompts, critically evaluate model outputs, and understand when human expertise should take precedence over model suggestions. Educational institutions and professional organizations should consider incorporating LLM literacy into statistical training programs for environmental scientists.
 
 The rapid evolution of LLM capabilities suggests that their role in statistical workflows will only increase. Current models already show impressive performance in code generation and implementation planning, and future models may address some of the limitations identified in statistical reasoning. However, the fundamental nature of LLMs as prediction engines rather than reasoning systems means that human oversight will remain essential for ensuring statistical quality.
 
 ### Research Needs
 
-Research is needed to inform the appropriate use of LLMs in ecological statistics. We identify several priorities. First, we need more formal evaluations of LLM statistical performance for ecological datasets and problems. Ecological data presents unique problems for statistical analysis [@Gilbert2024] and it is not yet clear how reliable LLMs advice on these problems. 
+Research is needed to inform the appropriate use of LLMs in ecological statistics. We identify several priorities. First, we need more formal evaluations of LLM statistical performance for ecological datasets and problems. Ecological data presents unique problems for statistical analysis [@Gilbert2024] and it is not yet clear how reliable LLMs advice on these problems. Ensuring that researchers report use of generative AI is important both for transparency, but to enable evaluation of how the tools are influencing our field.  
 
 Second, we need to develop prompting templates that novice analysts and statistical coders can use to reliably develop their analyses [@jansen2025leveraging]. These could include the recommendations above, as well as reference material that is attuned to specific types of ecological data. 
 
 Finally, LLMs have certain biases [@messeri2024artificial; @ji2025overview], but it is not yet clear if there are important implications for ecological statistics. One bias of LLMs is towards overconfidence in their own answers being correct [@zhou2024larger]. Researchers should therefore independently validate all analyses against reputable sources. Further research is needed to understand how LLM use may bias analyses in harmful ways. 
 
-By addressing these research needs and adopting thoughtful prompting strategies, environmental scientists can apply large language models to enhance rather than compromise statistical quality. The future of environmental statistics likely lies not in choosing between human expertise and artificial intelligence, but in developing effective partnerships that leverage the unique strengths of each.
+We have argued that LLMs present both risks and opportunities to the quality of ecological statitisics. By addressing these research needs and adopting thoughtful prompting strategies, environmental scientists can apply large language models to enhance rather than compromise statistical quality. The future of environmental statistics likely lies not in choosing between human expertise and artificial intelligence, but in developing effective partnerships that leverage the unique strengths of each.
 
 ## Acknowledgements
 
 CJB was supported by a Future Fellowship (FT210100792) from the Australian Research Council. 
-
-## Figures
-
-![](figure1.png)
-
-**Figure 1**
-Recommended workflow for using LLMs in statistical analysis, showing the four key steps alongside specific recommendations for effectively leveraging LLMs at each stage while maintaining scientific rigor.
 
 ## References
