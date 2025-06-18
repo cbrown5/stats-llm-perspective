@@ -9,7 +9,7 @@ bibliography: references.bib
 output: word_document
 ---
 
-Christopher J. Brown^[1,2] &  Scott Spillias^[2,3]
+Christopher J. Brown^1,2^ &  Scott Spillias^2,3^
 
 1. Institute for Marine and Antarctic Studies, University of Tasmania, Hobart, Tasmania
 
