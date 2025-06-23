@@ -17,14 +17,7 @@ Christopher J. Brown^1,2^ &  Scott Spillias^2,3^
 
 3. CSIRO Environment, Hobart, Australia
 
-#TODO
-Add table 1 into Rmd
-Edit final section so it flows.... 
-
-
 Contact: c.j.brown@utas.edu.au
-
-**Citation: Brown, Spillias (2025). Quality statistics with large language models. Unpublished manuscript. URL: https://www.seascapemodels.org/R-llm-workshop/quality-stats-with-llm-manuscript.html**
 
 ## Abstract
 
@@ -125,7 +118,7 @@ knitr::kable(table1, caption = "Table 1: Risks and opportunities when using LLMs
 
 All of the above risks can be turned into strengths with appropriate use and community standards for LLM use in statistics (Table 1). 
 
-AI accelerated p-hacking can become AI accelerated sensitivity analysis if different model options are appropriately reported. Using LLMs to rapdily explore alternative analytical approaches is appropriate if the alternatives are reported. This capability could support more robust sensitivity analyses, as researchers can efficiently implement various models to assess how analytical choices influence results. For instance, an ecologist studying species distributions could use an LLM to implement both frequentist and machine learning approaches to the same question, comparing outcomes without investing extensive time in coding each approach from scratch. This could then enable the researcher to report on how ecological model complexity relates to predictive power and overfitting [e.g. @fordham2018complex]. 
+AI accelerated p-hacking can become AI accelerated sensitivity analysis if different model options are appropriately reported. Using LLMs to rapidly explore alternative analytical approaches is appropriate if the alternatives are reported. This capability could support more robust sensitivity analyses, as researchers can efficiently implement various models to assess how analytical choices influence results. For instance, an ecologist studying species distributions could use an LLM to implement both frequentist and machine learning approaches to the same question, comparing outcomes without investing extensive time in coding each approach from scratch. This could then enable the researcher to report on how ecological model complexity relates to predictive power and overfitting [e.g. @fordham2018complex]. 
 
 An ongoing challenge for statistical ecology is promoting the documentation and reporting of data and code [@Culina2020; @popovic2024four; @jenkins2023reproducibility]. Better reporting standards are neccessary for transparency and replication of studies, as well as allowing combatting the bias towards publishing only significant results. LLMs can assist here by making the mundane task of documenting code more efficient, as well as refactoring bespoke code to meet disciplinary conventions. In our experience, confidence in how their code looks to experts is one of the main reasons researchers with lower levels of experience in statistical coding do not share their code publically (though we know of no specific surveys quantifying this effect). LLMs can help to clean up code and give researcher confidence about sharing their code. This advantage addresses a persistent challenge in the field, where code is typically not shared [@Culina2020; @popovic2024four]. 
 
@@ -185,7 +178,7 @@ It is helpful to separate statistical workflows into distinct components that al
 3. **Write code**: Writing the actual code to implement analyses
 4. **Guidance on Interpretation**: Understanding and reporting results
 
-We deal with steps 1-3 here (Figure 2). The credibility of statistical interpretation urgently needs further empirical evaluation, so we leave that for future studies.  
+We deal with steps 1-3 here (Figure 2). The credibility of statistical interpretation needs further empirical evaluation, so we leave that for future studies.  
 
 LLMs perform differently across these components. They excel at code generation and implementation planning but are less reliable for selecting appropriate statistical approaches or interpreting complex results. 
 

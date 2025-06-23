@@ -1,12 +1,12 @@
 --- 
-title: "Supplemental files: Quality ecological statistics with large language models"
+title: "Supplemental files: Prompting large language models for quality ecological statistics"
 author: "CJ Brown (c.j.brown@utas.edu.au)"
 date: "`r Sys.Date()`"
 description: |
   Perspective article on prompting - supplemental files 
 github-repo: cbrown5/R-llm-workshop
 bibliography: references.bib 
-output: word_document
+output: html_document
 ---
 
 Christopher J. Brown^1,2^ &  Scott Spillias^2,3^
