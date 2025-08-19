@@ -6,7 +6,7 @@ description: |
   Perspective article on prompting
 github-repo: cbrown5/R-llm-workshop
 bibliography: references.bib
-output: word_document  
+output: html_document  
 ---
 
 Christopher J. Brown^1,2^ &  Scott Spillias^2,3^
