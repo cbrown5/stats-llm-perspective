@@ -147,6 +147,7 @@ names(palette_models) <- model_levels
 
 g2 <- summary_zpn %>% 
 filter(PromptBase != "Detailed expert") %>%
+filter(!grepl("online", model)) %>% 
 ggplot(aes(x = PromptBase, y = 10)) +
 	geom_col(aes(y = Count, fill = model), colour = "black", width = 0.7, position = position_dodge2(preserve = "single")) +
 	scale_fill_manual(values = palette_models, name = "Model") +
@@ -158,4 +159,4 @@ ggplot(aes(x = PromptBase, y = 10)) +
 g2
 
 ggsave(plot_file2, g2, width = 8, height = 4, dpi = 300)
-
+ 
