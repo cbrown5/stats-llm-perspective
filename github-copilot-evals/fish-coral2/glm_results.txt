@@ -1,0 +1,41 @@
+Negative Binomial GLM: pres.topa ~ prop_coral
+
+
+Call:
+glm.nb(formula = pres.topa ~ prop_coral, data = Dat, init.theta = 0.3034217759, 
+    link = log)
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  -0.1542     0.4674  -0.330 0.741536    
+prop_coral    4.4459     1.3257   3.354 0.000797 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Negative Binomial(0.3034) family taken to be 1)
+
+    Null deviance: 51.082  on 48  degrees of freedom
+Residual deviance: 44.124  on 47  degrees of freedom
+AIC: 205.42
+
+Number of Fisher Scoring iterations: 1
+
+
+              Theta:  0.3034 
+          Std. Err.:  0.0852 
+
+ 2 x log-likelihood:  -199.4200 
+
+AIC: 205.4198 
+Overdispersion ratio (deviance/df): 0.939 
+
+Likelihood ratio test (vs null):
+Likelihood ratio tests of Negative Binomial Models
+
+Response: pres.topa
+       Model     theta Resid. df    2 x log-lik.   Test    df LR stat.
+1          1 0.2465843        48       -205.7706                      
+2 prop_coral 0.3034218        47       -199.4198 1 vs 2     1 6.350734
+     Pr(Chi)
+1           
+2 0.01173328
