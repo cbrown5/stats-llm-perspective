@@ -1,0 +1,2 @@
+"n"	"zero_count"	"zero_prop"	"mean_count"	"var_count"	"min_coral"	"max_coral"	"mean_coral"
+49	25	0.510204081632653	3.61224489795918	45.9923469387755	1	245	99.6734693877551

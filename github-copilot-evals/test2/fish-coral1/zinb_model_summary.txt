@@ -1,0 +1,23 @@
+
+Call:
+zeroinfl(formula = pres.topa ~ coral_prop | 1, data = dat, dist = "negbin")
+
+Pearson residuals:
+     Min       1Q   Median       3Q      Max 
+-0.54557 -0.49970 -0.47412 -0.09967  5.38497 
+
+Count model coefficients (negbin with log link):
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  -0.1541     0.5609  -0.275   0.7835    
+coral_prop    4.4458     1.7677   2.515   0.0119 *  
+Log(theta)   -1.1926     0.2812  -4.240 2.23e-05 ***
+
+Zero-inflation model coefficients (binomial with logit link):
+            Estimate Std. Error z value Pr(>|z|)
+(Intercept)   -10.16      93.94  -0.108    0.914
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+
+Theta = 0.3034 
+Number of iterations in BFGS optimization: 429 
+Log-likelihood: -99.71 on 4 Df
