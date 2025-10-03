@@ -44,6 +44,7 @@ vignettes/*.pdf
 # pkgdown site
 docs/
 submissions/
+github-copilot-evals/test*
 
 # translation temp files
 po/*~

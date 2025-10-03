@@ -1,5 +1,0 @@
-Overdispersion factor (Poisson) = 12.14
-Best model selected by AIC: NegBin
-Effect size (see best_model_effects.txt): IRR is multiplicative change in mean abundance per unit increase in coral proportion.
-Prediction interval (95% CI) saved in predictions.csv.
-Plot saved as fish_coral_relationship.png.
