@@ -34,7 +34,9 @@ These tests run the Github Copilot CLI for replicate prompts. Results are stored
 
 ### Test 3: How to write code that is accurate and evaluates
 
-TODO, Create a test where I output a specific parameter and assess accuracy. Do a zero shot attempt.... 
+See folder `scripts/coding-evals/`
+
+These tests evaluate LLM-generated code for accuracy and correctness. Scripts test models' abilities to generate error-free code with simple system prompts, assess code documentation capabilities, and conduct evaluations where models write code and produce output/plots that can be evaluated for accuracy. 
 
 ## TODO
 
