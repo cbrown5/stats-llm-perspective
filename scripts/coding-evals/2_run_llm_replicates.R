@@ -24,7 +24,7 @@ system_prompt <- paste(
 # Prompt A: detailed workflow
 prompt_detailed <- glue::glue(
 "## Goal 
-Write complete R code that can create a Bray-Curtis distance matrix among sites. 
+Write R code to calculate a distance matrix among sites from a benthic cover dataset using vegan. 
 
 ## Workflow
 
@@ -49,7 +49,7 @@ dat <- readr::read_csv(infile, show_col_types = FALSE)
 
 # Prompt B: vague workflow
 prompt_vague <- glue::glue(
-  "Write R code to calculate a distance matrix among sites from the benthic cover dataset using vegan. 
+  "Write R code to calculate a distance matrix among sites from a benthic cover dataset using vegan. 
 You will need to load the long format data from scripts/coding-evals/data/benthic-cover.csv. Data columns are 'site','trans','code','cover','n.pts'. 
 Write results to 'scripts/coding-evals/outputs/llm_distance.csv'. 
 

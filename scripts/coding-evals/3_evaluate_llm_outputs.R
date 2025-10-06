@@ -108,7 +108,8 @@ summary <- results %>%
   group_by(Model, Prompt, outcome) %>%
   summarise(Count = n(), .groups = "drop") %>%
   complete(Model, Prompt, outcome, fill = list(Count = 0)) %>%
-  arrange(Model, Prompt, outcome)
+  arrange(Model, Prompt, outcome) %>%
+  mutate(Prompt = ifelse(Prompt == "Vague", "Brief", Prompt)) 
 
 # Plot outcomes as a bar chart
 plt <- summary %>%
@@ -140,4 +141,4 @@ plotall <- plt2 + plt + plot_layout(ncol = 2, guides = "collect") +
 # Display plots and save
 plotall
 
-ggsave(plotall, filename = "outputs/llm_eval_barchart.png", width = 8, height = 4, dpi = 600)
+ggsave(plotall, filename = "outputs/llm_eval_barchart.png", width = 9, height = 4, dpi = 600)
