@@ -1,5 +1,7 @@
 # Evaluating ability of LLMs to convert reasoning into R code
 
+**Prompt used to draft the initial eval task** 
+
 I want to create an evalation of the ability of LLMs to turn reasoning into R code. 
 
 The task for the Copilot Agent is to scaffold this evaluation, including code and creating drafts of the prompts. We also need to create an R script that produces the verified solution. 
