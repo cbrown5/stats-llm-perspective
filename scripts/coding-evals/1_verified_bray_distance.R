@@ -27,7 +27,7 @@ wide <- dat_norm %>%
 mat <- wide %>% column_to_rownames("site") %>% as.matrix()
 
 # Compute Bray-Curtis distances
-bray <- vegan::vegdist(mat, method = "manhattan")
+bray <- vegan::vegdist(mat, method = "bray")
 
 # Convert to full square matrix for CSV output
 bray_mat <- as.matrix(bray)
