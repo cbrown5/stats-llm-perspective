@@ -86,7 +86,7 @@ for (i in 11:20) {
 #   )
   
  copilot_cmd <- sprintf(
-    "cd '%s' && copilot -p '%s' --allow-all-tools --deny-tool 'shell(cd)' --deny-tool 'shell(git)' --deny-tool 'shell(pwd)'",
+    "cd '%s' && copilot -p '%s' --allow-all-tools --deny-tool 'shell(cd)' --deny-tool 'shell(git)' --deny-tool 'shell(pwd)' --deny-tool 'fetch' --deny-tool 'extensions' --deny-tool 'websearch' --deny-tool 'githubRepo'",
     subdir_path,
     prompt_use
   )
