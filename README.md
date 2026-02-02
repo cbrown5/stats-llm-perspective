@@ -2,7 +2,9 @@
 
 Perspective paper on use of LLMs for statistical advice and implementation. Focus on environment and ecology. 
 
-`render-ms.R` Knits the manuscript. 
+Please see the paper "Prompting large language models for quality ecological statistics" in Methods in Ecology and Evolution for the final version of the manuscript. Version here is the submitted version. 
+
+`render-ms.R` Knits the submitted version of the manuscript. 
 
 ## scripts/ 
 
