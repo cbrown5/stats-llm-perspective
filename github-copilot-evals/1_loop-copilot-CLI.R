@@ -29,7 +29,7 @@
 #   of experimental manipulation.
 # -------------------------------------------------------------------
 # run the copilot CLI in a loop 
-# CJ Brown 2025-10-03
+# 2025-10-03
 
 # The first five replicates use a simple prompt, the second 5 replicates point the agent to a detailed readme file. 
 #
@@ -86,7 +86,7 @@ for (i in 11:20) {
 #   )
   
  copilot_cmd <- sprintf(
-    "cd '%s' && copilot -p '%s' --allow-all-tools --deny-tool 'shell(cd)' --deny-tool 'shell(git)' --deny-tool 'shell(pwd)'",
+    "cd '%s' && copilot -p '%s' --allow-all-tools --deny-tool 'shell(cd)' --deny-tool 'shell(git)' --deny-tool 'shell(pwd)' --deny-tool 'fetch' --deny-tool 'extensions' --deny-tool 'websearch' --deny-tool 'githubRepo'",
     subdir_path,
     prompt_use
   )

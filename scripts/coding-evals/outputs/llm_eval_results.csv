@@ -1,0 +1,2 @@
+file,code_found,outcome,cor,candidate_csv
+scripts/coding-evals/outputs/reps-backups/detailed_rep1.rds,TRUE,code evaluated and distance matrix produced but is accurate,1,scripts/coding-evals/outputs/llm_distance.csv

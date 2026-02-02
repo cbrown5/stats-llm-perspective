@@ -38,7 +38,10 @@ See folder `scripts/coding-evals/`
 
 These tests evaluate LLM-generated code for accuracy and correctness. Scripts test models' abilities to generate error-free code with simple system prompts, assess code documentation capabilities, and conduct evaluations where models write code and produce output/plots that can be evaluated for accuracy. 
 
-## TODO
+These tests evaluate LLM-generated code for accuracy and correctness. Scripts conduct evaluations where models write code and produce output/plots that can be evaluated for accuracy.
 
-Revise manuscript to respond to reviews. 
-See notes-for-responding-to-reviews.qmd for references to cite, as well as a rough plan for implementing some simulations. 
+`scripts/coding-evals/1_verified_bray_distance.R` Creates a verified reference output by computing Bray-Curtis distance matrix from benthic cover data. Normalizes cover by points, averages by site and code, pivots to wide format, and computes distances using vegan. Saves verified results to compare against LLM outputs.
+
+`scripts/coding-evals/2_run_llm_replicates.R` Runs 10 replicates per model and prompt using ellmer + OpenRouter. Tests two prompt strategies (detailed workflow vs vague instructions) for calculating distance matrices from benthic cover data. Saves raw LLM responses as RDS files to `outputs/reps-backups`.
+
+`scripts/coding-evals/3_evaluate_llm_outputs.R` Evaluates LLM-generated code by executing it and comparing outputs to the verified reference. Categorizes results as "Accurate result", "Inaccurate result", "CSV faulty", or "R error". Creates bar charts showing proportion of correct results by model and prompt type. 
