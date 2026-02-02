@@ -29,7 +29,7 @@
 #   of experimental manipulation.
 # -------------------------------------------------------------------
 # run the copilot CLI in a loop 
-# CJ Brown 2025-10-03
+# 2025-10-03
 
 # The first five replicates use a simple prompt, the second 5 replicates point the agent to a detailed readme file. 
 #
