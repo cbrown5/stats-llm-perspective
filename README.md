@@ -4,7 +4,13 @@ Perspective paper on use of LLMs for statistical advice and implementation. Focu
 
 Please see the paper "Prompting large language models for quality ecological statistics" in Methods in Ecology and Evolution for the final version of the manuscript. Version here is the submitted version. 
 
-`render-ms.R` Knits the submitted version of the manuscript. 
+`render-ms.R` Knits the submitted version of the ma
+
+## Documents and figures
+
+`quality-stats-with-llm-manuscript.Rmd` is the submitted version of the ms. 
+`figure1...` are files to create different versions of the workflow diagram. 
+`supplemental-examples.Rmd` are the examples of how to use a readme to create project files. 
 
 ## scripts/ 
 
