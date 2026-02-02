@@ -36,6 +36,8 @@ These tests run the Github Copilot CLI for replicate prompts. Results are stored
 
 See folder `scripts/coding-evals/`
 
+These tests evaluate LLM-generated code for accuracy and correctness. Scripts test models' abilities to generate error-free code with simple system prompts, assess code documentation capabilities, and conduct evaluations where models write code and produce output/plots that can be evaluated for accuracy. 
+
 These tests evaluate LLM-generated code for accuracy and correctness. Scripts conduct evaluations where models write code and produce output/plots that can be evaluated for accuracy.
 
 `scripts/coding-evals/1_verified_bray_distance.R` Creates a verified reference output by computing Bray-Curtis distance matrix from benthic cover data. Normalizes cover by points, averages by site and code, pivots to wide format, and computes distances using vegan. Saves verified results to compare against LLM outputs.
